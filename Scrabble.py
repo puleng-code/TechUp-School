@@ -13,5 +13,5 @@ for letter in word.lower():
     word_value = letters[letter]   #every letter in the given word is equalized with its value as on the dictionary
     total = word_value + total     #all the letters from the word given, their values added with the total
 
-#prints the total
+#prints the total   
 print("Your word", word, "is worth",total,"points","\n")
