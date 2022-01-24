@@ -1,23 +1,17 @@
-letters = {1:['A','E','I','O','U','L','N','R','S','T'],
-2:['D','G'],
-3:['B','C','M','P'],
-4:['F','H','V','W','Y'],
-5:['K'],
-8:['J','X'],
-10:['Q','Z']}
+#dictionary representing the values of the letters to be used from Scrabble words
+letters = {'a':1, 'b':3, 'c':3, 'd':2, 'e':1, 'f':4, 'g':2, 'h':4, 'i':1, 'j':8, 'k':5, 'l':1, 'm':3, 'n':1, 'o':1,
+            'p':3, 'q':10, 'r':1, 's':1, 't':1, 'u':1, 'v':4, 'w':4, 'x':8, 'y':4, 'z':10}
+
+#any random word you can think of
 word = input("Please enter your word: ")
-print(word)
-letter_s = []
 
-#this loop looks uses the word given by the user, then checks if that word exist 
-# in the list of letters 
-def display(word): # pass in the word that the user inputs as an argument to the function
-    scrabble_total = 0 # we will increment this total to track the total for the word
-    for letter in word: # loop over the WORD so that you can look at each letter in the word that the user inputted.
-        # You're now going to need to loop over the letter dictionary to find the number value for that letter
-        for key in letters: # loops over letters dictionary
-            if letter in letters[key]: # if the letter in our inputted WORD is in the dictionary
-                  print("Letter found!")
-                  print("Scrabble letter value is" + key)
+#the total we going to use to add all values of the letters used from the word given
+total = 0
 
-display(word)
+#for all the letters in the given word, will be used to be assigned a value as on the dictionary
+for letter in word.lower():
+    word_value = letters[letter]   #every letter in the given word is equalized with its value as on the dictionary
+    total = word_value + total     #all the letters from the word given, their values added with the total
+
+#prints the total   
+print("Your word", word, "is worth",total,"points","\n")
